@@ -13,6 +13,9 @@ import com.mycompany.calculadoraimc.CalculadoraIMC;
 public class Resultado extends javax.swing.JFrame {
 private CalculadoraIMC imc;
 
+
+
+
     /**
      * Creates new form Resultado
      */
@@ -24,7 +27,7 @@ private CalculadoraIMC imc;
         initComponents();
        
         jLSituacao.setText(imc.getSituacao());
-        jLImc.setText(String.valueOf(imc.getImc()));
+        jLImc.setText(String.format("%.2f", imc.getImc()));
     }
 
     /**
@@ -40,14 +43,23 @@ private CalculadoraIMC imc;
         jLSituacao = new javax.swing.JLabel();
         jLImc = new javax.swing.JLabel();
         jLResultIMC = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Resultado");
 
+        jLSituacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLSituacao.setText("jLabel2");
 
+        jLImc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLImc.setText("Seu IMC é:");
+        jLImc.setToolTipText("");
+        jLImc.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Seu IMC é:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,17 +68,18 @@ private CalculadoraIMC imc;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel1)
-                        .addGap(0, 124, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLSituacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLImc)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLResultIMC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLResultIMC, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLSituacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -77,9 +90,11 @@ private CalculadoraIMC imc;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLImc)
-                    .addComponent(jLResultIMC))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLResultIMC)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLImc)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -126,5 +141,6 @@ private CalculadoraIMC imc;
     private javax.swing.JLabel jLResultIMC;
     private javax.swing.JLabel jLSituacao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
