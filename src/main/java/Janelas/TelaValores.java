@@ -46,7 +46,7 @@ public class TelaValores extends javax.swing.JFrame {
         jLabel3.setText("Seu peso:");
 
         try {
-            jFAltura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#.##m")));
+            jFAltura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#.##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class TelaValores extends javax.swing.JFrame {
         });
 
         try {
-            jFPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.## Kg")));
+            jFPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
