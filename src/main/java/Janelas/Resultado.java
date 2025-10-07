@@ -5,16 +5,13 @@
 package Janelas;
 
 import com.mycompany.calculadoraimc.CalculadoraIMC;
+//Importação da classe CalculadoraIMC
 
 /**
  *
  * @author luis.fmleite
  */
 public class Resultado extends javax.swing.JFrame {
-private CalculadoraIMC imc;
-
-
-
 
     /**
      * Creates new form Resultado
@@ -22,11 +19,18 @@ private CalculadoraIMC imc;
     public Resultado() {
         initComponents();
     }
+
+    // Construtor que recebe um objeto CalculadoraIMC já com os dados calculados.
     public Resultado(CalculadoraIMC imc) {
-        
+        // Inicializa os componentes visuais da interface gráfica (gerado automaticamente pelo NetBeans).
         initComponents();
-       
+
+        // Atualiza o JLabel jLSituacao com a classificação do IMC (ex: "Peso normal", "Obesidade I", etc),
+        // utilizando o método getter da classe CalculadoraIMC.
         jLSituacao.setText(imc.getSituacao());
+
+        // Atualiza o JLabel jLImc com o valor numérico do IMC formatado com duas casas decimais.
+        // O método String.format("%.2f", ...) garante a apresentação amigável do número.
         jLImc.setText(String.format("%.2f", imc.getImc()));
     }
 

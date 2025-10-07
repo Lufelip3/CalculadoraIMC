@@ -1,6 +1,7 @@
 package Janelas;
 
 import com.mycompany.calculadoraimc.CalculadoraIMC;
+//Importação da classe CalculadoraIMC
 import javax.swing.JOptionPane;
 
 /*
@@ -140,16 +141,23 @@ public class TelaValores extends javax.swing.JFrame {
     private void jFAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFAlturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFAlturaActionPerformed
-
+// Método que trata o evento de clique no botão "Calcular".
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Cria uma nova instância da classe CalculadoraIMC, passando os valores de peso e altura
+        // convertidos de texto para tipo double. Os valores são obtidos dos campos formatados jFPeso e jFAltura.
+        // Utiliza Double.parseDouble para conversão, assumindo que os campos estão corretamente preenchidos.
         CalculadoraIMC a = new CalculadoraIMC(
-        Double.parseDouble(jFPeso.getText()),
-        Double.parseDouble(jFAltura.getText())
-                );
+                Double.parseDouble(jFPeso.getText()),
+                Double.parseDouble(jFAltura.getText())
+        );
+        // Cria uma nova janela do tipo Resultado, passando o objeto 'a' que contém o IMC calculado.
+        // Isso permite que a tela de resultado acesse os dados via getters.    
         Resultado r = new Resultado(a);
-       r.setVisible(true);
-       r.setLocationRelativeTo(this);
-        
+        // Torna a janela de resultado visível para o usuário.
+        r.setVisible(true);
+
+        // Centraliza a janela de resultado em relação à janela atual (this).
+        r.setLocationRelativeTo(this);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
